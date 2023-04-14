@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('seat_id')->references('id')->on('seats');  
-            $table->foreign('bus_id')->references('id')->on('buses');
-            $table->foreign('trip_id')->references('id')->on('trips');
-            $table->foreign('from_station_id')->references('id')->on('stations');
-            $table->foreign('to_station_id')->references('id')->on('stations');
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('seat_id')->references('id')->on('seats');  
+            $table->foreignId('bus_id')->references('id')->on('buses');
+            $table->foreignId('trip_id')->references('id')->on('trips');
+            $table->foreignId('from_station_id')->references('id')->on('stations');
+            $table->foreignId('to_station_id')->references('id')->on('stations');
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->foreign('bus_id')->references('id')->on('buses');
+            $table->foreignId('bus_id')->references('id')->on('buses');
             $table->string('seat_number')->unique();
             $table->timestamps();
         });

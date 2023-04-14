@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('trip_stations', function (Blueprint $table) {
             $table->id();
-            $table->foreign('station_id')->references('id')->on('stations');
-            $table->foreign('trip_id')->references('id')->on('trips');
+            $table->foreignId('station_id')->references('id')->on('stations');
+            $table->foreignId('trip_id')->references('id')->on('trips');
             $table->integer('order');
             $table->timestamps();
         });
