@@ -27,7 +27,8 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "app/Helper/Response.php"
+            "app/Helper/Response.php",
+            "app/Helper/Helper.php"
         ]
     },
     "autoload-dev": {
@@ -65,5 +66,15 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org/"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/yadakhov/laravel-disposable-email.git"
+        }
+    ]
 }

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     //
-    public function login(Request $request)
+    public function login(LoginRequest $request)
 {
     $credentials = $request->validate([
         'email' => ['required', 'email'],
@@ -22,7 +23,6 @@ class LoginController extends Controller
         ]);
     }
 
-    // return response()->json(['error' => 'Unauthorized'], 401);
     return responseFail("Unauthorized",401);
 }
 

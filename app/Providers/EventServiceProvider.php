@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Bus;
 use Illuminate\Auth\Events\Registered;
+use App\Observers\BusObserver;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;

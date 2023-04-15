@@ -2,6 +2,9 @@
 
 namespace App\Exceptions;
 use Illuminate\Auth\AuthenticationException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use Illuminate\Validation\UnauthorizedException;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -47,7 +50,10 @@ class Handler extends ExceptionHandler
     }
     public function render($request, Throwable $e)
     {
-        
+      dd($e);
+        if ($e instanceof UnauthorizedHttpException || $e instanceof UnauthorizedException ||$e instanceof AuthorizationException) {
+            return responseFail("Un Authorized" ,401 , );
+        }
         if ($e instanceof AuthenticationException) {
             return responseFail('Unauthenticated',401);
         }
